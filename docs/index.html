@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yu-Gi-Oh! Jo-Ken-Po Edition - Retro RPG Card Game built with HTML5, CSS3, and JavaScript." />
+  <title>Yu-Gi-Oh! Jo-Ken-Po Edition</title>
+
+  <link rel="shortcut icon" href="./assets/favicon/Favicon.ico" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://googleapis.com" />
+  <link rel="preconnect" href="https://gstatic.com" crossorigin />
+  <link href="https://googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <div class="bg-video" aria-hidden="true">
+    <video class="video" autoplay loop muted playsinline>
+      <source src="./assets/video/yugi.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <audio id="bgm" loop>
+    <source src="./assets/audios/egyptian_duel.mp3" type="audio/mp3" />
+  </audio>
+
+  <main class="container">
+    <aside class="container__left framed-golden-2" aria-label="Game Status and Card Details">
+      <header class="top-controls" role="toolbar" aria-label="Game Settings">
+        <button id="audio-toggle" class="rpgui-button control-btn" type="button" aria-label="Toggle Background Music" title="Toggle Music">
+          🔊
+        </button>
+
+        <button id="theme-toggle" class="rpgui-button control-btn" type="button" aria-label="Switch to Light Theme" title="Toggle Dark/Light Mode">
+          <span id="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+
+        <label for="language-select" class="sr-only">Select Language</label>
+        <select id="language-select" class="rpgui-select" aria-label="Language Selector">
+          <option value="en-US" selected>EN-US</option>
+          <option value="pt-BR">PT-BR</option>
+          <option value="es-ES">ES-ES</option>
+        </select>
+      </header>
+
+      <section class="score_box frame" aria-live="polite">
+        <span id="score_points">Win : 0 | Lose: 0</span>
+      </section>
+
+      <figure class="menu_avatar">
+        <img id="card-image" src="./assets/icons/card-back.png" alt="Selected Card Preview" />
+      </figure>
+
+      <section class="card_details frame" aria-live="polite">
+        <p id="card-name">Select</p>
+        <p id="card-type">a card</p>
+      </section>
+    </aside>
+
+    <section class="container__right" aria-label="Duel Arena">
+      <div class="card-box__container">
+        <div class="card-box framed" id="computer-cards" role="region" aria-label="Computer Hand"></div>
+
+        <div class="card-versus__container">
+          <div class="versus-top">
+            <div class="card-infield">
+              <img id="player-field-card" alt="Player Field Card" />
+            </div>
+
+            <img class="millennium-eye" src="./assets/icons/millenium2.png" alt="Millennium Eye" />
+
+            <div class="card-infield">
+              <img id="computer-field-card" alt="Computer Field Card" />
+            </div>
+          </div>
+
+          <div class="versus-bottom">
+            <button id="next-duel" class="rpgui-button golden" type="button" onclick="resetDuel()">
+              NEXT DUEL
+            </button>
+          </div>
+        </div>
+
+        <div class="card-box framed" id="player-cards" role="region" aria-label="Player Hand"></div>
+      </div>
+    </section>
+  </main>
+
+  <script src="./src/script.js" defer></script>
+</body>
+</html>
