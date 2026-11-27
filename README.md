@@ -37,7 +37,9 @@ Each monster card represents an attribute that beats one type and loses to anoth
 - **Dark Magician** (*Rock*) beats **Exodia** (*Scissors*)
 - **Exodia** (*Scissors*) beats **Blue Eyes White Dragon** (*Paper*)
 
-![Screenshot web demo](docs/assets/screenshot_web_demo_cards.png)
+![Screenshot web demo cards](docs/assets/screenshot_web_demo_cards.png)
+
+![Screenshot web demo duel](docs/assets/screenshot_web_demo_duel.png)
 
 See [repository original](https://github.com/digitalinnovationone/js-yugioh-assets).
 
